@@ -60,13 +60,14 @@ foreach($User in Select-UsersInOU)
     
     # set working vars
     $SamName = $User.SamAccountName
-    $NewUPN  = $SamName + "@" + $UPN
+    $NewUPN  =  $SamName + "@" + $UPN
     
     # Set UPN
     Write-Host "-[+] Setting UPN to: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -UserPrincipalName $NewUPN 
 
     # Set Proxy Address to lower
+    Write-Host "-[+] Setting all Proxy addresses entries to lowercase" -ForegroundColor DarkGray
     $OldProxyList = (Get-ADUser $User -Properties proxyaddresses).proxyaddresses
     $NewProxyList = 
     foreach($ProxyAddress in $OldProxyList)
