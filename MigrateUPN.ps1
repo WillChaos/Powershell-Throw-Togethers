@@ -52,7 +52,7 @@ Function Select-UPN()
 }
 # -------------------------------------------------   Exec    --------------------------------------------------------- #
 
-# main
+# Main
 $UPN = Select-UPN
 Write-Banner
 
@@ -89,10 +89,8 @@ foreach($User in Select-UsersInOU)
     Write-Host "-[+] Setting Email Address: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -EmailAddress $NewUPN
     
-
     # Set MailNic attribute
     Write-Host "-[+] Setting MailNicname Attribute: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -Replace @{mailNickname=$NewUPN}
 
-   
 }
