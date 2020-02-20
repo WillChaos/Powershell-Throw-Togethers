@@ -47,7 +47,7 @@ Function Select-UsersInOU()
 }
 Function Select-UPN()
 {
-    return (Get-adforest | select UPNSuffixes -ExpandProperty UPNSuffixes -Unique | Out-GridView -Title "Select UPN" -PassThru).ToString()
+    return (Get-ADForest | select UPNSuffixes -ExpandProperty UPNSuffixes -Unique | Out-GridView -Title "Select UPN" -PassThru).ToString()
 }
 # -------------------------------------------------   Exec    --------------------------------------------------------- #
 
