@@ -94,6 +94,6 @@ foreach($User in Select-UsersInOU)
     
     # Set MailNic attribute
     Write-Host "-[+] Setting MailNicname Attribute: $NewUPN" -ForegroundColor DarkGray
-    Set-ADUser -Identity $User -Replace @{mailNickname=$NewUPN}
+    Set-ADUser -Identity $User -Replace @{mailNickname=$SamName}
 
 }
