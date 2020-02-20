@@ -43,8 +43,7 @@ Function Select-OU()
 }
 Function Select-UsersInOU()
 {
-    $users = Get-ADUser -Filter * -SearchBase (Select-OU)
-    return $users
+    return Get-ADUser -Filter * -SearchBase (Select-OU)
 }
 Function Select-UPN()
 {
