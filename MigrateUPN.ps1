@@ -60,10 +60,10 @@ foreach($User in Select-UsersInOU)
     
     # set working vars
     $SamName = $User.SamAccountName
-    $NewUPN  =  $SamName + "@" + $UPN
+    $NewUPN  = $SamName + "@" + $UPN
     
     # Set UPN
-    Write-Host "-[+]Setting UPN to: $NewUPN" -ForegroundColor DarkGray
+    Write-Host "-[+] Setting UPN to: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -UserPrincipalName $NewUPN 
 
     # Set Proxy Address to lower
