@@ -35,7 +35,7 @@ Function Write-Banner()
     Write-Host "-------------------------------------------------" -ForegroundColor Magenta
     Write-Host "|                UPN mod script                  " -ForegroundColor Magenta
     Write-Host "-------------------------------------------------" -ForegroundColor Magenta
-    Write-Host " Primary UPNS Will be set as: $UPN "                -ForegroundColor Green
+    Write-Host " Primary UPNS Will be set as: $UPN "               -ForegroundColor Green
     Write-Host "-------------------------------------------------" -ForegroundColor Magenta
     Read-Host "Press enter to begin..."
 
