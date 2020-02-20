@@ -27,8 +27,6 @@ Import-Module *ActiveDirectory*
 # ------------------------------------------------- Functions --------------------------------------------------------- #
 Function Write-Banner()
 {
-    
-
     # swank
     Write-Host "-------------------------------------------------" -ForegroundColor Magenta
     Write-Host "|                UPN mod script                  " -ForegroundColor Magenta
