@@ -18,8 +18,8 @@
 
 .INFO
   Script doesnt handle any real advanced error checking yet. however, it has been stablly used on multiple migrations.
+  (Example: no null or sanity checks on OU/UPN setters - And no try/catch on set-aduser yet)
   Reccomended to target a test OU first. 
-  (for example: no null or sanity checks on OU/UPN setters - And no try/catch on set-aduser yet)
 #>
 
 # -------------------------------------------------  PreReqs  --------------------------------------------------------- #
