@@ -10,6 +10,11 @@
 .OUTPUTS
   N/A
 
+.REQUIRMENTS
+  Powershell: V4
+  Elevation:  Yes
+  Target:     Domain Controller
+
 .NOTES
   Version:        0.7
   Author:         willf
