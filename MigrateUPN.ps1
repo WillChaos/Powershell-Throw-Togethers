@@ -17,7 +17,7 @@
   Purpose/Change: Projects
 
 .INFO
-  Script doesnt handle any real advanced error checking yet. however, it has been stablly used on multiple migrations.
+  Script doesnt handle any real advanced error checking yet. however, it has been used on multiple migrations with stability.
   (Example: no null or sanity checks on OU/UPN setters - And no try/catch on set-aduser yet)
   Reccomended to target a test OU first. 
 #>
