@@ -38,12 +38,11 @@ Function Write-Banner()
 }
 Function Select-OU()
 {
-    $OU = Get-ADOrganizationalUnit -Filter * | select name, ObjectName , DistinguishedName| Out-GridView -PassThru -Title "Select OU" 
-    return $OU.DistinguishedName
+    return (Get-ADOrganizationalUnit -Filter * | select name, ObjectName , DistinguishedName| Out-GridView -PassThru -Title "Select OU" ).DistinguishedName
 }
 Function Select-UsersInOU()
 {
-    return Get-ADUser -Filter * -SearchBase (Select-OU)
+    return (Get-ADUser -Filter * -SearchBase (Select-OU))
 }
 Function Select-UPN()
 {
