@@ -10,16 +10,14 @@
 .OUTPUTS
   N/A
 
-.REQUIRMENTS
-  Powershell: V4
-  Elevation:  Yes
-  Target:     Domain Controller
-
 .NOTES
   Version:        0.7
   Author:         willf
   Creation Date:  20/2/20
   Purpose/Change: Projects
+  Powershell:     V4
+  Elevation:      Required
+  Target:         Domain Controller
 
 .INFO
   Script doesnt handle any real advanced error checking yet. however, it has been used on multiple migrations with stability.
