@@ -2,8 +2,7 @@
 #Requires -RunAsAdministrator
 <#
 .SYNOPSIS
-  Changes UPN, Mail, mailNic & proxyAddress in bulk (Based on OU selection)
-  Handy for 0365 migrations / Company restructures 
+  Changes UPN,Mail,MailNicName + Proxy addresses in bulk (Based on OU selection)
     
 .INPUTS
   N/A
@@ -15,7 +14,11 @@
   Version:        0.7
   Author:         willf
   Creation Date:  20/2/20
-  Purpose/Change: Projects - save hours of manual labour.
+  Purpose/Change: Projects
+
+.INFO
+  Script doesnt handle any real advanced error checking yet. however, it has been stablly used on multiple migrations.
+  Reccomended to target a test OU first.
 #>
 
 # -------------------------------------------------  PreReqs  --------------------------------------------------------- #
@@ -47,7 +50,7 @@ Function Select-UsersInOU()
 }
 Function Select-UPN()
 {
-    return Read-Host "Please type the UPN you would like to make primary (example: nulsen.org.au)"
+    return (Get-adforest | select UPNSuffixes -ExpandProperty UPNSuffixes -Unique | Out-GridView -Title "Select UPN" -PassThru).ToString()
 }
 # -------------------------------------------------   Exec    --------------------------------------------------------- #
 
@@ -88,8 +91,10 @@ foreach($User in Select-UsersInOU)
     Write-Host "-[+] Setting Email Address: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -EmailAddress $NewUPN
     
+
     # Set MailNic attribute
     Write-Host "-[+] Setting MailNicname Attribute: $NewUPN" -ForegroundColor DarkGray
     Set-ADUser -Identity $User -Replace @{mailNickname=$NewUPN}
-    
+
+   
 }
